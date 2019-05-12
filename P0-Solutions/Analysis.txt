@@ -1,0 +1,70 @@
+Task0 Analysis:
+-------------------------------------------------
+No of instructions: 1
+- textFirstRecord = texts[0]
+
+No of instructions: 1
+- callLastRecord = calls[-1]
+# first record of the texts printed
+
+No of instructions: ~8  as accessing different items of a list, casting to string, printing values
+- print("First record of texts, {} texts {} at time {}".format(str(textFirstRecord[0]),
+str(textFirstRecord[1]),
+str(textFirstRecord[2])))
+
+# Last record of the call printed
+No of instructions: ~10  as accessing different items of a list, casting to string, printing values
+print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(
+    str(callLastRecord[0]),str(callLastRecord[1]),str(callLastRecord[2]),str(callLastRecord[3])
+))
+
+Result: O(1) as the time complexity has a linear order
+
+Task1 Analysis:
+-------------------------------------------------
+
+# Explanation:
+# Loop in function runs for (5n+1)
+# Complexity due to used data structure as the list is not flat need operations to
+# convert data to readable format
+# Static instruction that takes approximately one time operation like assigment
+# k is another static value which denotes the instructions required to convert a list to set
+
+Result: Big-O = O(1 + 1 + 5n+1 + 5n+1 + k + 1) = O(2(5n) + k + 5) ~= O(5n)
+
+Task 2 Analysis:
+-------------------------------------------------
+
+# Explanation
+Function requires n**2 + n LogN + 1 to execute the operation to search, assign, filter, sort operations
+~ O(n**2)
+Another loop introduced into the execution to search for the items in receiver calls which increase
+the complexity by n. As it is a nested loop which runs for n iterations, the complexity is raised
+to n**2.
+Dropping lower order values such as static values for operations of assignment and printing the values
+Result - Big-O = O(n**2)
+
+Task 3 Analysis
+-------------------------------------------------
+# Explanation
+- Function requires ~ (2n + nLogN)
+- sort operation ~ nLogN
+- for loop ~ 2n
+- Printing of the unique items is ~ k (subset of values from n)
+- precentageCalculation is a one time operation ~ 3 instructions
+
+Dropping lower order values for static operations of assignment and printing the values
+Result - Big-O ~(2n+nLogN)
+
+Task 4 Analysis
+-------------------------------------------------
+# Explanation
+- First For loop in the function has a time complexity of ~ 2n
+- 2nd For loop in the function has a time complexity of ~k as this is a subset of the n
+- if operation "in" statment search for an item in sets -> ~ O(k),O(m) -> k is no of elements in 
+receiverSet and m is no of elements in textSet
+- sort operation ~ nLogN
+- Printing of the unique items is ~ z subset of k
+
+Dropping lower order values for static operations of assignment and printing the values
+Result - Big-O ~(2n+nLogN)
