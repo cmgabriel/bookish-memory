@@ -22,7 +22,7 @@ September 2016.".
 def extractLongestCallInformation(itemList):
     callTimeRecords = dict()
     print("Length of itemList:",len(itemList))
-    # O(n**2)
+    # O(n)
     for i,item in enumerate(itemList):
         callerPhone = item[0]
         callLength = int(item[-1])
@@ -31,10 +31,9 @@ def extractLongestCallInformation(itemList):
             callTimeRecords[callerPhone] += callLength
         else:
             callTimeRecords[callerPhone] = callLength
-
-        for rec in itemList:
-            if callerPhone == rec[1]:
-                callTimeRecords[callerPhone] += callLength
+            for rec in itemList:
+                if callerPhone == rec[1]:
+                    callTimeRecords[callerPhone] += callLength
     # O(n Log n)
     sortedCallTimeRecords = sorted(callTimeRecords, key=callTimeRecords.get, reverse=True)
     return sortedCallTimeRecords[0],callTimeRecords[sortedCallTimeRecords[0]]
