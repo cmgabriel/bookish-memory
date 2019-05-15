@@ -31,6 +31,8 @@ def extractLongestCallInformation(itemList):
             callTimeRecords[callerPhone] += callLength
         else:
             callTimeRecords[callerPhone] = callLength
+            # checking the information inside an else as 
+            # there might be chances of duplicate values 
             for rec in itemList:
                 if callerPhone == rec[1]:
                     callTimeRecords[callerPhone] += callLength
