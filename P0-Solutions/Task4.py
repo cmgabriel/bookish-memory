@@ -48,15 +48,7 @@ def identifyTeleMarketers(callList,textList):
         if caller in uniqueReceivers or caller in uniqueTextSenders or caller in uniqueTextReceivers:
             telemarketers.remove(caller)
 
-    # newCallerList = callerList.copy()
-
-    # for i,caller in enumerate(callerList):
-    #     if caller in receiverSet or caller in textSet:
-    #         newCallerList.remove(i)
-    
     return sorted(list(telemarketers))
-    # uniqueList = sorted(list(set(newCallerList)))
-    # return uniqueList
 print("These numbers could be telemarketers: ")
 uniqueList = identifyTeleMarketers(calls,texts)
 for item in uniqueList:

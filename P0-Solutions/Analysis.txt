@@ -36,13 +36,10 @@ Task 2 Analysis:
 -------------------------------------------------
 
 # Explanation
-Function requires n**2 + n LogN + 1 to execute the operation to search, assign, filter, sort operations
+Function requires n + n LogN + 1 to execute the operation to search, assign, filter, sort operations
 ~ O(n)
-Another loop introduced into the execution to search for the items in receiver calls which increase
-the complexity by n. As it is a nested loop which runs for n iterations for worst case, 
-the complexity is raised to n**2.
 Dropping lower order values such as static values for operations of assignment and printing the values
-Result - Big-O = O(n**2)
+Result - Big-O = O(nLogN)
 
 Task 3 Analysis
 -------------------------------------------------
@@ -52,16 +49,16 @@ Task 3 Analysis
 - precentageCalculation is a one time operation ~ 3 instructions
 
 Dropping lower order values for static operations of assignment and printing the values
-Result - Big-O = (n+nLogN) ~ nLogN
+Result - Big-O = (n+nLogN) ~ O(nLogN)
 
 Task 4 Analysis
 -------------------------------------------------
 # Explanation
-- First For loop in the function has a time complexity of ~ 2n
+- First For loop in the function has a time complexity of ~ n
 - 2nd For loop in the function has a time complexity of ~n as this is a subset of the n
-- if block inside the loop performs a membership test on the items in three different sets in which case
-complexity will be n**3
+- 3rd loop has a complexity of (n**2) because of the membership test with in the for loop which runs
+for n iterations
 - sort operation ~ nLogN
 
 Dropping lower order values for static operations of assignment and printing the values
-Result - Big-O  = (2n + n**2 + n**3 + nLogN) ~ O(n**3)
+Result - Big-O  = (2n + n**2 + nLogN) ~ O(n**2)
